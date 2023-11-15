@@ -1,0 +1,235 @@
+<html>
+<head>
+    <title>Add Rides</title>
+    
+    <style>
+        /*body background css*/
+    body{
+        background-image: url('Images/loginbg.jpg');
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        padding: 0;
+        margin: 0;
+        background-position: center center;
+        background-size: cover;
+        background-color: #464646;  
+        margin-top: 15%;
+        text-align:center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .rides{
+            font-family: "Lucida Console", "Courier New", monospace;
+            position: relative;
+            z-index: 1;
+            background: #FFFFFF;
+            opacity: 99%;
+            max-width: 350px;
+            margin: auto;
+            padding: 10px 10px 30px 10px;
+            text-align: center;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+            border-radius: 10px;
+        }
+    .rides h3 {
+        color: #333;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .rides label {
+        color: #555;
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .rides input[type="text"],
+    .rides input[type="number"],
+    .rides input[type="email"],
+    .rides input[type="tel"],
+    .rides input[type="date"],
+    .rides select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .rides input[type="radio"] {
+        margin-right: 10px;
+    }
+
+    .rides input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        color: white;
+        background-color: #007bff;
+        cursor: pointer;
+    }
+
+    .rides input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+    
+    .logoutClass{
+        font-family: "Lucida Console", "Courier New", monospace;
+        text-transform: uppercase;
+        outline: 0;
+        border-radius: 10px;
+        background: #FFA500;
+        width:200px;
+        border: 0;
+        padding: 10px;
+        margin-top: 10%;
+        margin-bottom: 10%;
+        color: #FFFFFF;
+        font-size: 15px;
+        cursor: pointer;
+        border: 3px solid #FF6500;
+    }
+    
+    .logoutClass:hover, .form button:active, .form button:focus{
+        background-color: #FF6500;
+        transition: all 1s ease 0s;
+    }
+
+    
+    </style>
+</head>
+<body>
+    
+    <form class="rides" id = "ridesForm">
+        <h3>Add Rides</h3>
+        <!-- Personal Details -->
+        <label for="ridename">Ride Name:</label>
+        <input type="text" id="ridename" name="ridename" required><br><br>
+        
+        <label for="rideCategory">Ride Category:</label>
+        <select id="rideCategory" name="rideCategory">
+            <option value="thrill">Thrill Rides</option>
+            <option value="family">Family Rides</option>
+            <option value="adventure">Adventure Rides</option>
+            <option value="fantasy">Fantasy & Mythology Rides</option>
+            <option value="interactive">Interactive & Simulation Rides</option>
+        </select><br><br>
+        
+        <label for="ridedescription">Description:</label>
+        <input type="text" id="ridedescription" name="ridedescription" required><br><br>
+        
+        <label>Status:</label>
+        <input type="radio" id="working" name="statusType" value="working" checked>
+        <label for="working">Working</label>
+        <input type="radio" id="notworking" name="statusType" value="notworking">
+        <label for="notworking">Not Working</label><br><br>
+        
+        <label for="openingtime">Opening Hours:</label>
+        <select id="openingtime" name="openingtime">
+            <option value="08:00">08:00</option>
+            <option value="08:30">08:30</option>
+            <option value="09:00">09:00</option>
+            <option value="09:30">09:30</option>
+            <option value="10:00">10:00</option>
+            <option value="10:30">10:30</option>
+            <option value="11:00">11:00</option>
+            <option value="11:30">11:30</option>
+            <option value="12:00">12:00</option>
+            <option value="12:30">12:30</option>
+            <option value="13:00">13:00</option>
+            <option value="13:30">13:30</option>
+            <option value="14:00">14:00</option>
+            <option value="14:30">14:30</option>
+            <option value="15:00">15:00</option>
+            <option value="15:30">15:30</option>
+            <option value="16:00">16:00</option>
+            <option value="16:30">16:30</option>
+            <option value="17:00">17:00</option>
+            <option value="17:30">17:30</option>
+            <option value="18:00">18:00</option>
+        </select>
+
+        <label for="closingtime">Closing Hours:</label>
+        <select id="closingtime" name="closingtime">
+            <option value="08:00">08:00</option>
+            <option value="08:30">08:30</option>
+            <option value="09:00">09:00</option>
+            <option value="09:30">09:30</option>
+            <option value="10:00">10:00</option>
+            <option value="10:30">10:30</option>
+            <option value="11:00">11:00</option>
+            <option value="11:30">11:30</option>
+            <option value="12:00">12:00</option>
+            <option value="12:30">12:30</option>
+            <option value="13:00">13:00</option>
+            <option value="13:30">13:30</option>
+            <option value="14:00">14:00</option>
+            <option value="14:30">14:30</option>
+            <option value="15:00">15:00</option>
+            <option value="15:30">15:30</option>
+            <option value="16:00">16:00</option>
+            <option value="16:30">16:30</option>
+            <option value="17:00">17:00</option>
+            <option value="17:30">17:30</option>
+            <option value="18:00">18:00</option>
+        </select>        
+        
+        <label for="seatcapacity">Seat Capacity:</label>
+        <input type="number" id="seatcapacity" name="seatcapacity" min= 1 required><br><br>
+        
+        <label for="heightreq">Height Requirements<br>(0 if not required)</label>
+        <input type="number" id="heightreq" name="heightreq" min= 0 required><br><br>
+        
+        
+        <input type="submit" value="Submit">
+        
+    </form>
+    
+    
+    
+    <!--
+    <div id="ticketPreview" class= "preview" style="display:none; margin-top: 20px;">
+        <h3>New Ticket:</h3>
+        <p id="ticketID"></p>
+        <p id="ticketDate"></p>
+    </div>
+    
+    
+    <script>
+        document.getElementById("ticketForm").onsubmit = function(event) {
+            event.preventDefault();
+            var id = document.getElementById("ticketid").value;
+            var date = document.getElementById("bookingDate").value;
+
+            document.getElementById("ticketID").innerText = "ID: " + id;
+            document.getElementById("ticketDate").innerText = "Date: " + date;
+            
+            document.getElementById("ticketPreview").style.display = 'block';
+            document.getElementById("ticketForm").style.display = 'none';
+        };
+    </script>
+    -->
+    
+    <button class = "logoutClass">Exit</button>
+ 
+    
+        <!-- 
+        <form action="login" method="post">
+            
+        <pre>
+        <input type ="text" name="uname" placeholder="username"/>
+
+        <input type ="text" name="pass" placeholder="password"/>
+
+        <input type ="submit" value="insert"/>
+        </pre>
+           
+        </form>
+         -->
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<html>
+<head>
+    <title>Ticketing Center</title>
+    
+    <style>
+        /*body background css*/
+    body{
+        background-image: url('Images/loginbg.jpg');
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        padding: 0;
+        margin: 0;
+        background-position: center center;
+        background-size: cover;
+        background-color: #464646;  
+        margin-top: 15%;
+        text-align:center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .employee{
+            font-family: "Lucida Console", "Courier New", monospace;
+            position: relative;
+            z-index: 1;
+            background: #FFFFFF;
+            opacity: 99%;
+            max-width: 260px;
+            margin: auto;
+            padding: 10px 10px 30px 10px;
+            text-align: center;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+            border-radius: 10px;
+        }
+    .buttonClass{
+        font-family: "Lucida Console", "Courier New", monospace;
+        text-transform: uppercase;
+        outline: 0;
+        border-radius: 10px;
+        background: #1ADBE5;
+        width:200px;
+        border: 0;
+        padding: 15px;
+        margin-bottom: 10px;
+        color: #FFFFFF;
+        font-size: 15px;
+        cursor: pointer;
+    }
+    .buttonClass:hover, .form button:active, .form button:focus{
+        background-color: #06C5CF;
+        transition: all 1s ease 0s;
+    }
+    
+    .logoutClass{
+        font-family: "Lucida Console", "Courier New", monospace;
+        text-transform: uppercase;
+        outline: 0;
+        border-radius: 10px;
+        background: #FFA500;
+        width:200px;
+        border: 0;
+        padding: 10px;
+        margin-top: 10%;
+        color: #FFFFFF;
+        font-size: 15px;
+        cursor: pointer;
+        border: 3px solid #FF6500;
+    }
+    
+    .logoutClass:hover, .form button:active, .form button:focus{
+        background-color: #FF6500;
+        transition: all 1s ease 0s;
+    }
+
+    </style>
+</head>
+<body>
+    
+    <div class="employee">
+        <h2>Ticket</h2>
+        <button class = "buttonClass">Add</button>
+        
+        <button class = "buttonClass">Update</button>
+    </div>
+    
+    
+    <button class = "logoutClass">Logout / Exit</button>
+ 
+    
+        <!-- 
+        <form action="login" method="post">
+            
+        <pre>
+        <input type ="text" name="uname" placeholder="username"/>
+
+        <input type ="text" name="pass" placeholder="password"/>
+
+        <input type ="submit" value="insert"/>
+        </pre>
+           
+        </form>
+         -->
+
+</body>
+</html>

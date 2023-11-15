@@ -1,0 +1,108 @@
+<html>
+<head>
+    <title>Theme Park Management System</title>
+    
+    <style>
+        /*body background css*/
+        body{
+            padding: 0;
+            margin: 0;
+
+
+            background-position: center center;
+
+
+
+            background-size: cover;
+
+            background-color: #464646;  
+            margin-top: 15%;
+            text-align:center;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .loginform{
+            font-family: "Lucida Console", "Courier New", monospace;
+            position: relative;
+            z-index: 1;
+            background: #FFFFFF;
+            opacity: 99%;
+            max-width: 260px;
+            margin: 200px auto 100px;
+            padding: 30px 35px 20px 35px;
+            text-align: center;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+            border-radius: 10px;
+        }
+
+        .loginform input{
+            font-family: "Lucida Console", "Courier New", monospace;
+            outline: 0;
+            border-radius: 10px;
+            background: #F2F2F2;
+            width: 100%;
+            border: 0;
+            margin: 0 0 15px;
+            padding: 15px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        .loginform input:hover{
+            background-color: #D3F8F9;
+            transition: all 1s ease 0s;
+        }
+        .loginform input:focus{
+            background-color: #D3F8F9;
+            transition: all 1s ease 0s;
+        }
+        .loginform button{
+            font-family: "Lucida Console", "Courier New", monospace;
+            text-transform: uppercase;
+            outline: 0;
+            border-radius: 10px;
+            background: #1ADBE5;
+            width: 100%;
+            border: 0;
+            padding: 15px;
+            color: #FFFFFF;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .loginform button:hover, .form button:active, .form button:focus{
+            background-color: #06C5CF;
+            transition: all 1s ease 0s;
+        }
+    </style>
+</head>
+<body>
+ 
+    <div class="loginform">
+        <h2>Theme Park <br> DataBase Management</h2>
+        <form>
+
+            <input type ="text" name="username" placeholder="username">
+            <input type ="password" name="password" placeholder="password">
+            <button>login</button>
+
+        </form>
+    </div>
+ 
+    
+        <!-- 
+        <form action="login" method="post">
+            
+        <pre>
+        <input type ="text" name="uname" placeholder="username"/>
+
+        <input type ="text" name="pass" placeholder="password"/>
+
+        <input type ="submit" value="insert"/>
+        </pre>
+           
+        </form>
+         -->
+
+</body>
+</html>

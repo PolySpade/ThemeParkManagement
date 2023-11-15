@@ -1,0 +1,163 @@
+<html>
+<head>
+    <title>Update Ticket</title>
+    
+    <style>
+        /*body background css*/
+    body{
+        background-image: url('Images/loginbg.jpg');
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        padding: 0;
+        margin: 0;
+        background-position: center center;
+        background-size: cover;
+        background-color: #464646;  
+        margin-top: 15%;
+        text-align:center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .employee{
+            font-family: "Lucida Console", "Courier New", monospace;
+            position: relative;
+            z-index: 1;
+            background: #FFFFFF;
+            opacity: 99%;
+            max-width: 350px;
+            margin: auto;
+            padding: 10px 10px 30px 10px;
+            text-align: center;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+            border-radius: 10px;
+        }
+        
+        
+    .preview{
+         font-family: "Lucida Console", "Courier New", monospace;
+            position: relative;
+            z-index: 1;
+            background: #FFFFFF;
+            opacity: 99%;
+            max-width: 350px;
+            margin: auto;
+            padding: 10px 10px 30px 10px;
+            text-align: center;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+            border-radius: 10px;
+    }
+    .employee h3 {
+        color: #333;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .employee label {
+        color: #555;
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .employee input[type="text"],
+    .employee input[type="number"],
+    .employee input[type="email"],
+    .employee input[type="tel"],
+    .employee input[type="date"],
+    .employee select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .employee input[type="radio"] {
+        margin-right: 10px;
+    }
+
+    .employee input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        color: white;
+        background-color: #007bff;
+        cursor: pointer;
+    }
+
+    .employee input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+    
+    .logoutClass{
+        font-family: "Lucida Console", "Courier New", monospace;
+        text-transform: uppercase;
+        outline: 0;
+        border-radius: 10px;
+        background: #FFA500;
+        width:200px;
+        border: 0;
+        padding: 10px;
+        margin-top: 10%;
+        margin-bottom: 10%;
+        color: #FFFFFF;
+        font-size: 15px;
+        cursor: pointer;
+        border: 3px solid #FF6500;
+    }
+    
+    .logoutClass:hover, .form button:active, .form button:focus{
+        background-color: #FF6500;
+        transition: all 1s ease 0s;
+    }
+
+    
+    </style>
+</head>
+<body>
+    
+    <form id="ticketForm" class = "employee">
+        <h3>Create a Ticket</h3>
+        <!-- Personal Details -->
+        <label for="ticketid">Ticket ID:</label>
+        <input type="text" id="ticketid" name="ticketid" required><br><br>
+
+        <label for="bookingdate">Change Booking Date:</label>
+        <input type="date" id="bookingdate" name="bookingdate" required><br><br>
+        
+        <input type="submit" value="Submit">
+        
+    </form>
+    
+    
+    <div id="ticketPreview" class= "preview" style="display:none; margin-top: 20px;">
+        <h3>Updated Ticket:</h3>
+        <p id="ticketID"></p>
+        <p id="ticketDate"></p>
+    </div>
+    
+    
+    <script>
+        document.getElementById("ticketForm").onsubmit = function(event) {
+            event.preventDefault();
+            var id = document.getElementById("ticketid").value;
+            var date = document.getElementById("bookingdate").value;
+
+            document.getElementById("ticketID").innerText = "ID: " + id;
+            document.getElementById("ticketDate").innerText = "Date: " + date;
+            
+            document.getElementById("ticketPreview").style.display = 'block';
+            document.getElementById("ticketForm").style.display = 'none';
+        };
+    </script>
+    
+    <button class = "logoutClass">Exit</button>
+ 
+    
+  
+
+</body>
+</html>

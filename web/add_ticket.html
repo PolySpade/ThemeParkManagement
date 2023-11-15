@@ -1,0 +1,251 @@
+<html>
+<head>
+    <title>Add Ticket</title>
+    
+    <style>
+        /*body background css*/
+    body{
+        background-image: url('Images/loginbg.jpg');
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        padding: 0;
+        margin: 0;
+        background-position: center center;
+        background-size: cover;
+        background-color: #464646;  
+        margin-top: 15%;
+        text-align:center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .employee{
+            font-family: "Lucida Console", "Courier New", monospace;
+            position: relative;
+            z-index: 1;
+            background: #FFFFFF;
+            opacity: 99%;
+            max-width: 350px;
+            margin: auto;
+            padding: 10px 10px 30px 10px;
+            text-align: center;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+            border-radius: 10px;
+        }
+    .employee h3 {
+        color: #333;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .employee label {
+        color: #555;
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .employee input[type="text"],
+    .employee input[type="number"],
+    .employee input[type="email"],
+    .employee input[type="tel"],
+    .employee input[type="date"],
+    .employee select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .employee input[type="radio"] {
+        margin-right: 10px;
+    }
+
+    .employee input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        color: white;
+        background-color: #007bff;
+        cursor: pointer;
+    }
+
+    .employee input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+    
+    .logoutClass{
+        font-family: "Lucida Console", "Courier New", monospace;
+        text-transform: uppercase;
+        outline: 0;
+        border-radius: 10px;
+        background: #FFA500;
+        width:200px;
+        border: 0;
+        padding: 10px;
+        margin-top: 10%;
+        margin-bottom: 10%;
+        color: #FFFFFF;
+        font-size: 15px;
+        cursor: pointer;
+        border: 3px solid #FF6500;
+    }
+    
+    .logoutClass:hover, .form button:active, .form button:focus{
+        background-color: #FF6500;
+        transition: all 1s ease 0s;
+    }
+
+    
+    </style>
+</head>
+<body>
+    
+    <form class="employee" id = "ticketForm">
+        <h3>Create a Ticket</h3>
+        <!-- Personal Details -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min= 18 required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required><br><br>
+
+        <!-- Ticket Type -->
+        <label for="ticketType">Ticket Type:</label>
+        <select id="ticketType" name="ticketType">
+            <option value="oneDay">One Day Pass</option>
+            <option value="twoDay">Two Day Pass</option>
+            <option value="threeDay">Three Day Pass</option>
+        </select><br><br>
+
+        <!-- Pass Type -->
+        <label>Type of Pass:</label>
+        <input type="radio" id="regularPass" name="passType" value="regular" checked>
+        <label for="regularPass">Regular Pass (P750)</label>
+        <input type="radio" id="expressPass" name="passType" value="express">
+        <label for="expressPass">Express Pass (P1250)</label><br><br>
+
+        <!-- Booking Date -->
+        <label for="bookingDate">Booking Date:</label>
+        <input type="date" id="bookingDate" name="bookingDate" required><br><br>
+
+        <!-- Discount Type -->
+        <label for="discountType">Type of Discount Applied:</label>
+        <select id="discountType" name="discountType">
+            <option value="null">N/A</option>
+            <option value="promo">PROMO</option>
+            <option value="pwd">P W D</option>
+            <option value="senior">Senior Citizen</option>
+            <option value="children">Children</option>
+            
+        </select><br><br>
+        <div id="totalBill">
+            <h4>Total Bill:</h4>
+            <p id="totalPrice"></p>
+        </div>
+        <label for="total">Bill Paid:</label>
+        <input type="number" id="total" name="total" required><br><br>
+        
+        
+        <input type="submit" value="Submit">
+        
+    </form>
+    
+    
+    <script>
+        function calculateTotal() {
+            var pass_ticket = document.querySelector('input[name="passType"]:checked').value;
+            var days_ticket = document.getElementById("ticketType").value;
+            var discount = document.getElementById("discountType").value;
+            var total,pricePerTicket;
+            
+            if (pass_ticket === 'regular') {
+                pricePerTicket = 750;
+            } else if (pass_ticket === 'express') {
+                pricePerTicket = 1250;
+            } 
+            
+            if (days_ticket === 'oneDay') {
+                total = pricePerTicket * 1;
+            } else if (days_ticket === 'twoDay') {
+                total = pricePerTicket * 2;
+            } else if (days_ticket === 'threeDay') {
+                total = pricePerTicket * 3;
+            }
+
+           
+            if (discount === 'pwd') {
+                total = total * 0.8;
+            }else if (discount === 'promo') {
+                total = total - 250;
+            }
+            else if (discount === 'children') {
+                total = total * 0.9;
+            } else if (discount === 'senior') {
+                total = total * 0.8;
+            }
+            document.getElementById("totalPrice").innerText = "P"+ total;
+        }
+
+        document.querySelectorAll('input[name="passType"]').forEach(function(radio) {
+            radio.addEventListener('change', calculateTotal);
+        });
+        
+        document.getElementById("ticketType").addEventListener('change', calculateTotal);
+        document.getElementById("discountType").addEventListener('change', calculateTotal);
+        // Initial calculation on page load
+        calculateTotal();
+    </script>
+    
+    
+    <!--
+    <div id="ticketPreview" class= "preview" style="display:none; margin-top: 20px;">
+        <h3>New Ticket:</h3>
+        <p id="ticketID"></p>
+        <p id="ticketDate"></p>
+    </div>
+    
+    
+    <script>
+        document.getElementById("ticketForm").onsubmit = function(event) {
+            event.preventDefault();
+            var id = document.getElementById("ticketid").value;
+            var date = document.getElementById("bookingDate").value;
+
+            document.getElementById("ticketID").innerText = "ID: " + id;
+            document.getElementById("ticketDate").innerText = "Date: " + date;
+            
+            document.getElementById("ticketPreview").style.display = 'block';
+            document.getElementById("ticketForm").style.display = 'none';
+        };
+    </script>
+    -->
+    
+    <button class = "logoutClass">Exit</button>
+ 
+    
+        <!-- 
+        <form action="login" method="post">
+            
+        <pre>
+        <input type ="text" name="uname" placeholder="username"/>
+
+        <input type ="text" name="pass" placeholder="password"/>
+
+        <input type ="submit" value="insert"/>
+        </pre>
+           
+        </form>
+         -->
+
+</body>
+</html>
